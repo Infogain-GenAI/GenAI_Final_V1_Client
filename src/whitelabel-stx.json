@@ -1,0 +1,15 @@
+{
+  "ORG_LOGO_URL":"https://branding.seagate.com/content/thumb/png/602f7a7a-78af-4b06-bfbf-dde46d03a980",
+  "SECONDARY_LOGO_URL": "https://media.licdn.com/dms/image/C510BAQHzCj5jr24FAg/company-logo_200_200/0/1580731750871?e=2147483647&v=beta&t=hA6Zo6UPeY4j5nfhIZBVwRKUR1JIY354NpJIB0iWf4o",
+  "ORG_LOGO_WIDTH": "160px",
+  "ORG_LOGO_HEIGHT": "130px",
+  "THEME_COLORS": {
+    "PRIMARY": "#b9d873",
+    "SECONDARY": "Red",
+    "FONT_COLOR": "darkyellow"
+  },
+  "TIME_ZONE": "",
+  "HEADING":"ASK Neo!",
+  "SUBHEADING":"Lyve Services Cross Functional SME & Assistant!",
+  "TAGLINE":" Now Chat with Lyve Services Smart Assistant!" 
+}

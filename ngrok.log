@@ -1,0 +1,14 @@
+{"addr":"localhost:4040","lvl":"info","msg":"starting web service","obj":"web","t":"2023-03-24T16:46:24.603262-05:00"}
+{"lvl":"info","msg":"tunnel session started","obj":"tunnels.session","t":"2023-03-24T16:46:25.1802527-05:00"}
+{"id":"f879cc0b850e","lvl":"info","msg":"client session established","obj":"csess","t":"2023-03-24T16:46:25.1807641-05:00"}
+{"addr":"http://localhost:3032","lvl":"info","msg":"started tunnel","name":"chatgptserver (http)","obj":"tunnels","t":"2023-03-24T16:46:25.315862-05:00","url":"http://api-ssingh.ngrok.io"}
+{"addr":"http://localhost:3032","lvl":"info","msg":"started tunnel","name":"chatgptserver","obj":"tunnels","t":"2023-03-24T16:46:25.3163705-05:00","url":"https://api-ssingh.ngrok.io"}
+{"addr":"http://localhost:80","lvl":"info","msg":"started tunnel","name":"chatgptclient (http)","obj":"tunnels","t":"2023-03-24T16:46:25.3203837-05:00","url":"http://chat-ssingh.ngrok.io"}
+{"addr":"http://localhost:80","lvl":"info","msg":"started tunnel","name":"chatgptclient","obj":"tunnels","t":"2023-03-24T16:46:25.3259918-05:00","url":"https://chat-ssingh.ngrok.io"}
+{"id":"89c5af9dfb9e","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:3492","t":"2023-03-24T16:46:50.1848748-05:00"}
+{"id":"6bb4480819d8","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:3492","t":"2023-03-24T16:47:26.8438446-05:00"}
+{"id":"71b71b601b57","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:3492","t":"2023-03-24T16:49:20.1001986-05:00"}
+{"id":"97f9c7d53d9d","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:4607","t":"2023-03-24T17:00:56.2385646-05:00"}
+{"id":"aa10cc6e13c1","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:64947","t":"2023-03-25T05:59:00.9480549-05:00"}
+{"id":"fd75b7a586ca","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:64947","t":"2023-03-25T05:59:50.3733701-05:00"}
+{"id":"f62333c941c8","l":"[::1]:3032","lvl":"info","msg":"join connections","obj":"join","r":"76.30.95.156:65137","t":"2023-03-25T06:01:10.8635491-05:00"}

@@ -1,0 +1,6 @@
+{
+    "API_ENDPOINT":"https://newsdlcapimachinewindow.centralindia.cloudapp.azure.com",
+    "clientId":"21fea15c-caa6-4f75-b8cf-e075083ae757", 
+    "authority":"https://login.microsoftonline.com/3f7f52c7-07b2-4cb1-a07a-496256021e6f",
+    "redirectUri": "https://sdlcassistantapp.azurewebsites.net"
+}

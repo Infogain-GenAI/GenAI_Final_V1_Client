@@ -1,0 +1,15 @@
+{
+  "ORG_LOGO_URL":"https://logos-world.net/wp-content/uploads/2021/03/Expedia-Logo-700x394.png",
+  "SECONDARY_LOGO_URL": "https://1000logos.net/wp-content/uploads/2023/02/ChatGPT-Logo.jpg",
+  "ORG_LOGO_WIDTH": "160px",
+  "ORG_LOGO_HEIGHT": "100px",
+  "THEME_COLORS": {
+    "PRIMARY": "#ffcd3c",
+    "SECONDARY": "whitesmoke",
+    "FONT_COLOR": "Darkblue"
+  },
+  "TIME_ZONE": "",
+  "HEADING":"Expedia Copilot",
+  "SUBHEADING":"Your AI Data Privacy Specialist!",
+  "TAGLINE":" Now Chat with your Expedia Copilot: Discover, Learn, Engage!" 
+}

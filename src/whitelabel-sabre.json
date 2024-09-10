@@ -1,0 +1,18 @@
+{
+  "ORG_LOGO_URL_PERSONAL":"https://media.licdn.com/dms/image/C510BAQHzCj5jr24FAg/company-logo_200_200/0/1580731750871?e=2147483647&v=beta&t=hA6Zo6UPeY4j5nfhIZBVwRKUR1JIY354NpJIB0iWf4o",
+  "SECONDARY_LOGO_URL": "https://media.licdn.com/dms/image/C510BAQHzCj5jr24FAg/company-logo_200_200/0/1580731750871?e=2147483647&v=beta&t=hA6Zo6UPeY4j5nfhIZBVwRKUR1JIY354NpJIB0iWf4o",
+  "Absoluted_Data_LOGO":"https://www.absolutdata.com/wp-content/uploads/2018/07/logo-1.png",
+  "IG_ORG_LOGO_URL":"https://media.licdn.com/dms/image/C510BAQHzCj5jr24FAg/company-logo_200_200/0/1580731750871?e=2147483647&v=beta&t=hA6Zo6UPeY4j5nfhIZBVwRKUR1JIY354NpJIB0iWf4o",
+  "ORG_LOGO_URL":"https://upload.wikimedia.org/wikipedia/commons/8/8c/Sabre_Corporation_logo.svg",
+  "ORG_LOGO_WIDTH": "160px",
+  "ORG_LOGO_HEIGHT": "130px",
+  "THEME_COLORS": {
+    "PRIMARY": "#add8e6",
+    "SECONDARY": "whitesmoke",
+    "FONT_COLOR": "black"
+  },
+  "TIME_ZONE": "",
+  "HEADING":"Assembly Code Assistant",
+  "SUBHEADING":"MFOL -  Conversational AI ",
+  "TAGLINE":" Analyse, Design and Convert your mainframe code to Java code !" 
+}

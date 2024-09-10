@@ -1,0 +1,15 @@
+{
+  "ORG_LOGO_URL":"https://www.carlogos.org/car-logos/toyota-logo-1989-1400x1200.png",
+  "SECONDARY_LOGO_URL": "https://projector.tensorflow.org/preview.png",
+  "ORG_LOGO_WIDTH": "160px",
+  "ORG_LOGO_HEIGHT": "100px",
+  "THEME_COLORS": {
+    "PRIMARY": "#D93402",
+    "SECONDARY": "whitesmoke",
+    "FONT_COLOR": "white"
+  },
+  "TIME_ZONE": "",
+  "HEADING":"TOYOTA ASSISTANT",
+  "SUBHEADING":" Here To help",
+  "TAGLINE":" Now Chat with your Toyota Expert: Discover, Learn, Engage!" 
+}

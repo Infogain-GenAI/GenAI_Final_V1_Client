@@ -1,0 +1,9 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/bbf2ae62-698b-4327-a792-d522893849db/resourceGroups/GenAI_Team1/providers/Microsoft.Web/sites/infogaingaiappforsdlcassistance",
+    "appService.deploySubpath": "build"
+}

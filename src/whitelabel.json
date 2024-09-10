@@ -1,0 +1,17 @@
+{
+  "SECONDARY_LOGO_URL":"https://www.infogain.com/wp-content/themes/infogainv2022/infogain-2021/assets//images/finished/infogain-small-white-logo.svg",
+  "ORG_LOGO_URL": "https://image.lampsplus.com/is/image/b9gt8/nectarine-rose-bouquet-ovo-table-lamp__861a1.jpg?qlt=65&wid=780&hei=780&op_sharpen=1&fmt=jpeg",
+  "ORG_LOGO_WIDTH": "140px",
+  "ORG_LOGO_HEIGHT": "80px",
+  "THEME_COLORS": {
+    "PRIMARY": "#fff",
+    "SECONDARY": "#fff",
+    "FONT_COLOR": "darkyellow"
+  },
+  "TIME_ZONE": "",
+  "HEADING":"Your GAI Assistant!",
+  "SUBHEADING":"Your Companion and Assistant !",
+  "TAGLINE":"Now ask your queries and get Answers!" ,
+  "LLM":"LLM used - WizardCoder-Python-34B-V1.0",
+  "LLM_CARD_LINK":"https://huggingface.co/WizardLM/WizardCoder-Python-34B-V1.0"
+}

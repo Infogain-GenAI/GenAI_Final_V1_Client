@@ -1,0 +1,6 @@
+{
+    "API_ENDPOINT":"https://infogaingaiserviceforsdlcassistance.eastus2.cloudapp.azure.com:443",
+    "clientId":"53a26e20-187d-4ed2-9914-50bb0c512bf9",
+    "authority":"https://login.microsoftonline.com/3f7f52c7-07b2-4cb1-a07a-496256021e6f",
+    "redirectUri": "/"
+}

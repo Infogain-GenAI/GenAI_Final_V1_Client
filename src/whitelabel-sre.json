@@ -1,0 +1,17 @@
+{
+  "ORG_LOGO_URL":"https://media.licdn.com/dms/image/C510BAQHzCj5jr24FAg/company-logo_200_200/0/1580731750871?e=2147483647&v=beta&t=hA6Zo6UPeY4j5nfhIZBVwRKUR1JIY354NpJIB0iWf4o",
+  "SECONDARY_LOGO_URL": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Google_Labs_Icon_%282023%29.svg",
+  "ORG_LOGO_WIDTH": "140px",
+  "ORG_LOGO_HEIGHT": "110px",
+  "THEME_COLORS": {
+    "PRIMARY": "#c7e0f4",
+    "SECONDARY": "#deecf9",
+    "FONT_COLOR": "darkyellow"
+  },
+  "TIME_ZONE": "",
+  "HEADING":"Your Site Reliability Assistant!",
+  "SUBHEADING":"I generate responses based on my assigned expertise and knowledge base!",
+  "TAGLINE":" Now Consult with your Site Reliability Assistant!" ,
+  "LLM":"LLM used - WizardCoder-Python-34B-V1.0",
+  "LLM_CARD_LINK":"https://huggingface.co/WizardLM/WizardCoder-Python-34B-V1.0"
+}

@@ -1,0 +1,7 @@
+{
+    "API_ENDPOINT":"https://avrcia.eastus.cloudapp.azure.com/api/",
+    "clientId":"d5d20e08-e5cf-495e-8940-6c1919a0b08d", 
+    "authority":"https://login.microsoftonline.com/487753ef-8cf6-4960-ad5f-9ceb7b82fcd7",
+    "redirectUri": "/"
+}
+  
