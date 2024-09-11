@@ -14,8 +14,13 @@ steps:
     npm install
   displayName: 'Install Node.js dependencies'
 
+- script: |
+    Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
+    Start-Sleep -Seconds 30
+  displayName: 'Start Node.js server'
+
 - powershell: |
-   ./zap_scan.ps1
+   .\zap_scan.ps1
   displayName: 'Run ZAP Scan'
 
 - task: PublishPipelineArtifact@1
