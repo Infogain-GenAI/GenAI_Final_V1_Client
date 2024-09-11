@@ -20,84 +20,16 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-  
+- script: |
+    pip install zap-cli
+  displayName: 'Install ZAP CLI'
 
-- task: owaspzap@1
-  displayName: 'ZAP Scanner for AVRCIA Client'
+- powershell: |
+    ./zap_scan.ps1
+  displayName: 'Run ZAP Scan'
+
+- task: PublishPipelineArtifact@1
   inputs:
-    scantype: 'targetedScan'
-    url: 'https://infogaingaiappformultipersona.azurewebsites.net'
-    port: '443'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/owaspzap'
-    ArtifactName: 'ZAP Reports'
-    MaxArtifactSize: 0
-
-- bash: |
-   sudo npm install -g handlebars-cmd
-
-   cat <<EOF > owaspzap/nunit-template.hbs
-   {{#each site}}
-
-   <test-run
-       id="2"
-       name="Owasp test"
-       start-time="{{../[@generated]}}"  >
-       <test-suite
-           id="{{@index}}"
-           type="Assembly"
-           name="{{[@name]}}"
-           result="Failed"
-           failed="{{alerts.length}}">
-           <attachments>
-               <attachment>
-                   <filePath>$(Build.SourcesDirectory)/owaspzap/report.html</filePath>
-               </attachment>
-           </attachments>
-       {{#each alerts}}<test-case
-           id="{{@index}}"
-           name="{{alert}}"
-           result="Failed"
-           fullname="{{alert}}"
-           time="1">
-               <failure>
-                   <message>
-                       <![CDATA[{{{desc}}}]]>
-                   </message>
-                   <stack-trace>
-                       <![CDATA[
-   Solution:
-   {{{solution}}}
-
-   Reference:
-   {{{reference}}}
-
-   instances:{{#each instances}}
-   * {{uri}}
-       - {{method}}
-       {{#if evidence}}- {{{evidence}}}{{/if}}
-                       {{/each}}]]>
-                   </stack-trace>
-               </failure>
-       </test-case>
-       {{/each}}
-       </test-suite>
-   </test-run>
-   {{/each}}
-   EOF
-  displayName: 'owasp nunit template'
-  condition: always()
-
-- bash: ' handlebars owaspzap/report.json < owaspzap/nunit-template.hbs > owaspzap/test-results.xml'
-  displayName: 'generate nunit type file'
-  condition: always()
-
-- task: PublishTestResults@2
-  displayName: 'Publish Test Results **/TEST-*.xml'
-  inputs:
-    testResultsFormat: NUnit
-    testResultsFiles: 'owaspzap/test-results.xml'
-  condition: always()
-
+    targetPath: '$(System.DefaultWorkingDirectory)/zap_report.html'
+    artifact: 'ZAP Report'
+  displayName: 'Publish ZAP Report'
