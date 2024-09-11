@@ -14,11 +14,6 @@ steps:
     npm install
   displayName: 'Install Node.js dependencies'
 
-- script: |
-    Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
-    Start-Sleep -Seconds 30
-  displayName: 'Start Node.js server'
-
 - powershell: |
     # Download and install ZAP
     Invoke-WebRequest -Uri "https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2_10_0_windows.exe" -OutFile "ZAP_2_10_0_windows.exe"
