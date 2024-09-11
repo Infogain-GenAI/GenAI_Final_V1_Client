@@ -1,13 +1,8 @@
-# Node.js with React
-# Build a Node.js project that uses React.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
-- main
+- none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -17,15 +12,32 @@ steps:
 
 - script: |
     npm install
-    npm run build
-  displayName: 'npm install and build'
+  displayName: 'Install Node.js dependencies'
 
 - script: |
-    pip install zap-cli
-  displayName: 'Install ZAP CLI'
+    Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
+    Start-Sleep -Seconds 30
+  displayName: 'Start Node.js server'
 
 - powershell: |
-    ./zap_scan.ps1
+    # Download and install ZAP
+    Invoke-WebRequest -Uri "https://github.com/zaproxy/zaproxy/releases/download/v2.10.0/ZAP_2_10_0_windows.exe" -OutFile "ZAP_2_10_0_windows.exe"
+    Start-Process -FilePath "ZAP_2_10_0_windows.exe" -ArgumentList "/S" -Wait
+
+    # Start ZAP in daemon mode
+    Start-Process -FilePath "C:\Program Files\OWASP\Zed Attack Proxy\zap.bat" -ArgumentList "-daemon -port 8080" -NoNewWindow -Wait
+
+    # Wait for ZAP to start
+    Start-Sleep -Seconds 30
+
+    # Run ZAP scan
+    Invoke-WebRequest -Uri "http://localhost:8080/JSON/ascan/action/scan/?url=https://infogaingaiappformultipersona.azurewebsites.net" -Method GET
+
+    # Wait for the scan to complete
+    Start-Sleep -Seconds 300
+
+    # Generate report
+    Invoke-WebRequest -Uri "http://localhost:8080/OTHER/core/other/htmlreport/" -OutFile "zap_report.html"
   displayName: 'Run ZAP Scan'
 
 - task: PublishPipelineArtifact@1
