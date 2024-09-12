@@ -3,7 +3,7 @@ Invoke-WebRequest -Uri "https://github.com/zaproxy/zaproxy/releases/download/v2.
 #Start-Process -FilePath "ZAP_2_15_0_windows.exe" -ArgumentList "/S" -PassThru -Wait
 
 # Start ZAP in daemon mode
-Start-Process -FilePath "C:\Program Files\ZAP\Zed Attack Proxy\zap.bat" -ArgumentList "-daemon -port 8080" -NoNewWindow -Wait
+Start-Process -FilePath "C:\Program Files (x86)\ZAP\Zed Attack Proxy\zap.bat" -ArgumentList "-daemon -port 8080" -NoNewWindow -Wait
 
 # Wait for ZAP to start
 Start-Sleep -Seconds 30
