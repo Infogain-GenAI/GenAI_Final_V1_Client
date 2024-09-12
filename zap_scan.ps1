@@ -9,7 +9,7 @@ Invoke-WebRequest -Uri $zapDownloadUrl -OutFile $zapInstallerPath
 
 # Install ZAP
 Write-Output "Installing ZAP..."
-Start-Process -FilePath $zapInstallerPath -ArgumentList "/S" -Wait
+Start-Process -FilePath "ZAP_2_15_0_windows.exe" -ArgumentList "/S" -Wait
 
 # Verify ZAP installation
 if (-Not (Test-Path $zapExecutable)) {
