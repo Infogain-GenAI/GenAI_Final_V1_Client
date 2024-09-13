@@ -32,17 +32,17 @@ steps:
     artifact: 'ZAP Report'
   displayName: 'Publish ZAP Report'
 
--task: AzureCLI@2
-  displayName: 'Call Validator API'
+- task: AzureCLI@2
   inputs:
     azureSubscription: 'devops_tools' 
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: |
-    curl --max-time 60 "https://html5.validator.nu/?doc=$(targetURL)" > report.txt
+    inlineScript: | 
+      curl --max-time 60 "https://html5.validator.nu/?doc=$(targetURL)" > html_validation_report.txt
+  displayName: 'Call HTML Validation API'
 
 - task: PublishBuildArtifacts@1
   inputs:
-  PathtoPublish: report.txt
-  ArtifactName: 'API_Response'
-  publishLocation: 'Container'    
+    PathtoPublish: html_validation_report.txt
+    ArtifactName: 'API_Response'
+    publishLocation: 'Container'    
