@@ -33,11 +33,11 @@ steps:
   displayName: 'Publish ZAP Report'
 
 - bash: | 
-    curl --max-time 60 "https://html5.validator.nu/?doc=$(targetURL)" > html_validation_report.txt
+    curl --max-time 60 "https://html5.validator.nu/?doc=$(targetURL)" > html_validation_report.html
   displayName: 'Call HTML Validation API'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: html_validation_report.txt
+    PathtoPublish: html_validation_report.html
     ArtifactName: 'API_Response'
     publishLocation: 'Container'    
