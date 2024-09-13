@@ -31,3 +31,18 @@ steps:
     targetPath: '$(System.DefaultWorkingDirectory)/report.html'
     artifact: 'ZAP Report'
   displayName: 'Publish ZAP Report'
+
+-task: AzureCLI@2
+  displayName: 'Call Validator API'
+  inputs:
+    azureSubscription: 'devops_tools' 
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+    curl --max-time 60 "https://html5.validator.nu/?doc=$(targetURL)" > report.txt
+
+- task: PublishBuildArtifacts@1
+  inputs:
+  PathtoPublish: report.txt
+  ArtifactName: 'API_Response'
+  publishLocation: 'Container'    
