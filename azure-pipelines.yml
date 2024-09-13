@@ -20,10 +20,10 @@ steps:
   displayName: 'Start Node.js server'
 
 - bash: | 
-  echo $(targetURL)
-  chmod -R 777  ./
+   echo $(targetURL)
+   chmod -R 777  ./
    docker run --rm -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t $(targetURL) -J report.json -r report.html 
-  true
+   true
   displayName: 'Owasp Container Scan'
 
 - task: PublishPipelineArtifact@1
