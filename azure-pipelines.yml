@@ -14,9 +14,9 @@ steps:
     npm install
   displayName: 'Install Node.js dependencies'
 
-- powershell: |
-    Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
-    Start-Sleep -Seconds 30
+- script: |
+    npm start &
+    sleep 30
   displayName: 'Start Node.js server'
 
 - bash: | 
