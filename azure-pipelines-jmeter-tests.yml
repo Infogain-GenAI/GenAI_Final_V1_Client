@@ -1,13 +1,8 @@
-# Node.js with React
-# Build a Node.js project that uses React.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
-- main
+- none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
@@ -17,5 +12,30 @@ steps:
 
 - script: |
     npm install
-    npm run build
-  displayName: 'npm install and build'
+  displayName: 'Install Node.js dependencies'
+
+- script: |
+    npm start &
+    sleep 30
+  displayName: 'Start Node.js server'
+
+# Install JMeter
+- script: |
+    curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.zip -o jmeter.zip
+    tar -xf jmeter.zip
+    set JMETER_HOME=$(System.DefaultWorkingDirectory)\apache-jmeter-5.6.3
+    set PATH=%JMETER_HOME%\bin;%PATH%
+  displayName: 'Install JMeter'
+
+# Run JMeter tests
+- script: |
+    jmeter -n -t path/to/your/test-plan.jmx -l path/to/your/results.jtl
+  displayName: 'Run JMeter Tests'
+
+# Publish JMeter test results
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: 'path/to/your/results.jtl'
+    testRunTitle: 'JMeter Test Results'
+  displayName: 'Publish JMeter Test Results'
+
