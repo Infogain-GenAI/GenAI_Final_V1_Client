@@ -41,3 +41,13 @@ steps:
     PathtoPublish: html_validation_report.html
     ArtifactName: 'API_Response'
     publishLocation: 'Container'    
+
+- bash: | 
+    curl --max-time 60 "https://jigsaw.w3.org/css-validator/validator?text=$(text)&warning=$(warning)&profile=$(profile)" > css_validation_report.html
+  displayName: 'Call CSS Validation API'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'css_validation_report.html'
+    ArtifactName: 'API_Response'
+    publishLocation: 'Container'      
