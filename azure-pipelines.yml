@@ -2,7 +2,7 @@ trigger:
 - none
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
@@ -14,17 +14,40 @@ steps:
     npm install
   displayName: 'Install Node.js dependencies'
 
-- powershell: |
-    Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
-    Start-Sleep -Seconds 30
+- script: |
+    npm start &
+    sleep 30
   displayName: 'Start Node.js server'
 
-- powershell: |
-   .\zap_scan.ps1
-  displayName: 'Run ZAP Scan'
+- bash: | 
+   echo $(targetURL)
+   chmod -R 777  ./
+   docker run --rm -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t $(targetURL) -J report.json -r report.html 
+   true
+  displayName: 'Owasp Container Scan'
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(System.DefaultWorkingDirectory)/zap_report.html'
+    targetPath: '$(System.DefaultWorkingDirectory)/report.html'
     artifact: 'ZAP Report'
   displayName: 'Publish ZAP Report'
+
+- bash: | 
+    curl --max-time 60 "https://html5.validator.nu/?doc=$(targetURL)" > html_validation_report.html
+  displayName: 'Call HTML Validation API'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: html_validation_report.html
+    ArtifactName: 'API_Response'
+    publishLocation: 'Container'    
+
+- bash: | 
+    curl --max-time 60 "https://jigsaw.w3.org/css-validator/validator?text=$(text)&warning=$(warning)&profile=$(profile)" > css_validation_report.html
+  displayName: 'Call CSS Validation API'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'css_validation_report.html'
+    ArtifactName: 'API_Response'
+    publishLocation: 'Container'      
