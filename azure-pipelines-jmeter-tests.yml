@@ -29,13 +29,13 @@ steps:
 
 # Run JMeter tests
 - script: |
-    jmeter -n -t path/to/your/test-plan.jmx -l path/to/your/results.jtl
+    jmeter -n -t test-plan.jmx -l results.jtl
   displayName: 'Run JMeter Tests'
 
 # Publish JMeter test results
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: 'path/to/your/results.jtl'
+    testResultsFiles: 'results.jtl'
     testRunTitle: 'JMeter Test Results'
   displayName: 'Publish JMeter Test Results'
 
