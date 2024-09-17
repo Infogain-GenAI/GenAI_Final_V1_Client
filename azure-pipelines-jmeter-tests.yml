@@ -20,22 +20,24 @@ steps:
   displayName: 'Start Node.js server'
 
 # Install JMeter
-- script: |
-    curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.zip -o jmeter.zip
-    tar -xf jmeter.zip
-    set JMETER_HOME=$(System.DefaultWorkingDirectory)\apache-jmeter-5.6.3
-    set PATH=%JMETER_HOME%\bin;%PATH%
+- powershell: |
+    Invoke-WebRequest -Uri https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.zip -OutFile jmeter.zip
+    Expand-Archive -Path jmeter.zip -DestinationPath .
+    $env:JMETER_HOME = "$(System.DefaultWorkingDirectory)\apache-jmeter-5.6.3"
+    $env:PATH = "$env:JMETER_HOME\bin;$env:PATH"
   displayName: 'Install JMeter'
 
 # Run JMeter tests
-- script: |
-    jmeter -n -t path/to/your/test-plan.jmx -l path/to/your/results.jtl
+- powershell: |
+    $env:JMETER_HOME = "$(System.DefaultWorkingDirectory)\apache-jmeter-5.6.3"
+    $env:PATH = "$env:JMETER_HOME\bin;$env:PATH"
+    jmeter -n -t test-plan.jmx -l results.jtl
   displayName: 'Run JMeter Tests'
 
 # Publish JMeter test results
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: 'path/to/your/results.jtl'
+    testResultsFiles: 'results.jtl'
     testRunTitle: 'JMeter Test Results'
   displayName: 'Publish JMeter Test Results'
 
