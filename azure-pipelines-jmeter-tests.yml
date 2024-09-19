@@ -34,10 +34,16 @@ steps:
     jmeter -n -t test-plan.jmx -l results.jtl
   displayName: 'Run JMeter Tests'
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)/results.jtl'
+    artifact: 'JMeter Test Results'
+  displayName: 'Publish JMeter Results'
+  
 # Publish JMeter test results
 - task: PublishTestResults@2
   inputs:
     testResultsFiles: 'results.jtl'
     testRunTitle: 'JMeter Test Results'
-  displayName: 'Publish JMeter Test Results'
+  displayName: ' JMeter Test ResulPublishts'
 
