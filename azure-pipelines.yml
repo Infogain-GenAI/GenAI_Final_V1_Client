@@ -39,7 +39,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: html_validation_report.html
-    ArtifactName: 'API_Response'
+    ArtifactName: 'UI_Validation'
     publishLocation: 'Container'    
 
 - bash: | 
@@ -49,5 +49,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'css_validation_report.html'
-    ArtifactName: 'API_Response'
+    ArtifactName: 'UI_Validation'
     publishLocation: 'Container'      
