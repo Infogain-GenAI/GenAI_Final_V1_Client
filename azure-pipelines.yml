@@ -22,7 +22,7 @@ steps:
 - bash: | 
    echo $(targetURL)
    chmod -R 777  ./
-   docker run --rm -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t $(targetURL) -J report.json -r report.html 
+   docker run --rm -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t $(apiURL) -J report.json -r report.html 
    true
   displayName: 'Owasp Container Scan'
 
